@@ -6,7 +6,7 @@ const ProductModel = require("./models/Product");
 
 app.use(express.json());
 
-mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?admin",
+mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=admin",
 {useNewUrlParser:true,}
 );
 
@@ -15,7 +15,7 @@ app.get("/",  (req, res) => {
     try {
          product.save();
         res.send("inserted data");
-        
+
 
     } catch (error) {
         console.log(err);
