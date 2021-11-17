@@ -6,7 +6,10 @@ const ProductModel = require('./models/Product')
 
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost/pizzeria', { useNewUrlParser: true, useUnifiedTopology:true,});
+mongoose.connect('mongodb://suOscar:p9TX%5AK!FI!@host:27017/pizzeria?admin',
+{useNewUrlParser:true,
+useUnifiedTopology:true,}
+);
 
 app.get('/', async (req, res) => {
     const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
