@@ -10,11 +10,12 @@ mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?admin",
 {useNewUrlParser:true,}
 );
 
-app.get("/", async (req, res) => {
+app.get("/",  (req, res) => {
     const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
     try {
-        await product.save();
+         product.save();
         res.send("inserted data");
+        
 
     } catch (error) {
         console.log(err);
