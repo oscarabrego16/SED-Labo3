@@ -11,7 +11,7 @@ mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=a
 );
 
 
-app.get("/",  async (req, res) => {
+app.post("/",  async (req, res) => {
     try {
         const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
         await product.save();
