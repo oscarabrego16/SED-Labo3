@@ -2,13 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-const ProductModel = require('./models/Product')
+const ProductModel = require("./models/Product");
 
 app.use(express.json());
 
-mongoose.connect('mongodb://suOscar:p9TX%5AK!FI!@host:27017/pizzeria?admin',
-{useNewUrlParser:true,
-useUnifiedTopology:true,}
+mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?admin",
+{useNewUrlParser:true,}
 );
 
 app.get("/", async (req, res) => {
@@ -17,7 +16,7 @@ app.get("/", async (req, res) => {
         await product.save();
         res.send("inserted data");
 
-    } catch (err) {
+    } catch (error) {
         console.log(err);
     }
 
