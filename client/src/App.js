@@ -7,7 +7,7 @@ import Axios from 'axios'
 
 function App() {
   const [productName, setProductName] = useState("");
-  const [quantity, setQuantity] = useState(0);
+  const [productQuantity, setQuantity] = useState(0);
   const addToDDB = () => {
     Axios.post("http://localhost:3000/insert", 
     { 
