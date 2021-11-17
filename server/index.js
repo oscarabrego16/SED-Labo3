@@ -10,10 +10,10 @@ mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=a
 {useNewUrlParser:true,}
 );
 
-app.get("/",  (req, res) => {
+app.get("/",  async (req, res) => {
     const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
     try {
-         product.save();
+        await product.save();
         res.send("inserted data");
 
 
