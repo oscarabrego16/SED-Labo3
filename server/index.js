@@ -11,10 +11,11 @@ mongoose.connect('mongodb://suOscar:p9TX%5AK!FI!@host:27017/pizzeria?admin',
 useUnifiedTopology:true,}
 );
 
-app.get('/', async (req, res) => {
+app.get("/", async (req, res) => {
     const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
     try {
         await product.save();
+        res.send("inserted data");
 
     } catch (err) {
         console.log(err);
