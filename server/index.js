@@ -12,14 +12,14 @@ mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=a
 
 
 app.get("/",  async (req, res) => {
-    const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
     try {
+        const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
         await product.save();
-        res.send("inserted data");
-
+        return res.json({status:"success", data: product,message:"product added"});
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        return res.json({status:"error", data: NULL,message:error});
     }
 
 })
