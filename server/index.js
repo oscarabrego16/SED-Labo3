@@ -6,7 +6,7 @@ const ProductModel = require("./models/Product");
 
 app.use(express.json());
 
-mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=admin",
+mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@localhost:27017/pizzeria?authSource=admin",
 {useNewUrlParser:true}
 );
 
