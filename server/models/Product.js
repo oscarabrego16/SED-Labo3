@@ -4,11 +4,11 @@ const ProductSchema = new mongoose.Schema({
         required:true,
         type:String,
     },
-    produuctQuantity:{
+    productQuantity:{
         type: Number,
         required=true,
     },
 });
 
-const Product = mongoose.model("ProductData",ProductSchema)
+const Product = mongoose.model("Product",ProductSchema)
 module.exports= Product;
