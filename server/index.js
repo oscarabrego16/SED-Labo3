@@ -7,8 +7,9 @@ const ProductModel = require("./models/Product");
 app.use(express.json());
 
 mongoose.connect("mongodb://suAlex:Rn$NJFS4NyFP@host:27017/pizzeria?authSource=admin",
-{useNewUrlParser:true,}
+{useNewUrlParser:true}
 );
+
 
 app.get("/",  async (req, res) => {
     const product = new ProductModel({ productName: "Apple", productQuantity: 3 });
