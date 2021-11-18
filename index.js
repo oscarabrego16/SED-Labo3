@@ -43,8 +43,8 @@ app.put("/update", async (req, res) => {
     const id = req.body.id;
     try{
         await ProductModel.findById(id,(err,upProd)=>{
-            upPro.productName= newProductName;
-            upPro.save();
+            upProd.productName= newProductName;
+            upProd.save();
             res.send("updated");
         });
     }catch(err){
