@@ -46,19 +46,19 @@ app.put("/update", async (req, res) => {
             upPro.productName= newProductName;
             upPro.save();
             res.send("updated");
-        })
+        });
     }catch(err){
-        console.log(err)
+        console.log(err);
     }
     
 
-})
+});
 
 app.delete("/delete/:id", async(req,res)=>{
     const id = req.params.id;
     await ProductModel.findByIdAndRemove(id).exec();
     res.send("product deleted");
-})
+});
 
 
 app.listen(3000, () => {
